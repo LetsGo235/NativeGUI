@@ -1,0 +1,6 @@
+{
+  "containers": "minecraft:furnace",
+  "textures": {
+    "minecraft:textures/gui/container/furnace.png": "minecraft:optigui/gui/modern_furnace.png"
+  }
+}

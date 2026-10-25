@@ -1,0 +1,75 @@
+name: Bug report
+description: Report a crash, broken GUI, or incorrect texture selection.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve NativeGUI. Please test with the latest version and **remove account tokens/private information** from logs before posting.
+  - type: input
+    id: nativegui
+    attributes:
+      label: NativeGUI version
+      placeholder: 1.0.0-rc.1
+    validations:
+      required: true
+  - type: input
+    id: neoforge
+    attributes:
+      label: NeoForge version
+      placeholder: 21.1.264
+    validations:
+      required: true
+  - type: input
+    id: pack
+    attributes:
+      label: Resource pack name and version
+      description: Link to the pack if it is public.
+      placeholder: Colourful Containers Glass Edition — version...
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Game environment
+      options:
+        - Singleplayer
+        - Multiplayer (client only)
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Which GUI texture should appear?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Enable pack...\n2. Open container...\n3. Observe..."
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste a relevant excerpt, or attach files/screenshots. Redact usernames, IPs, UUIDs, access tokens and server addresses when appropriate.
+    validations:
+      required: false
+  - type: textarea
+    id: modlist
+    attributes:
+      label: Other installed mods
+      description: Especially mods altering inventory screens or textures.
+    validations:
+      required: false

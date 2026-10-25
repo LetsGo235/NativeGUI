@@ -1,0 +1,14 @@
+NativeGUI v0.2.0-alpha.1 compatibility pack - Minecraft 1.21.1
+
+1. Regular chest: teal custom GUI (OptiFine properties).
+2. Chest named Treasure Chest: purple/gold (OptiFine name condition).
+3. Barrel: brown/gold (historical OptiGUI INI).
+4. Furnace: blue-gray/teal (OptiGUI 3 JSON containers+textures).
+5. Purple shulker box: purple texture (OptiFine color condition).
+6. Other shulker colors: vanilla texture (nonmatch).
+7. F3+T: all existing custom interfaces should still work.
+8. Optional: enable NativeGUI-Priority-Test-Pack ABOVE this pack.
+   Chest skin becomes yellow/olive. Disable it and F3+T to restore.
+
+These are original demonstrator graphics. Resource pack tests only;
+no OptiGUI implementation files or assets are used.

@@ -1,0 +1,3 @@
+Enable ABOVE the base NativeGUI test resource pack. Regular and renamed single
+chests should both use the olive/yellow override, despite the base pack having
+named chest rules. Disable and press F3+T to restore normal pack appearance.

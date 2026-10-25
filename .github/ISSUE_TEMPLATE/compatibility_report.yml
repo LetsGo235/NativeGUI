@@ -1,0 +1,38 @@
+name: Resource-pack compatibility
+description: Report a working pack or a pack that needs better support.
+title: "[Pack] "
+body:
+  - type: input
+    id: pack
+    attributes:
+      label: Pack name, version, and link
+    validations:
+      required: true
+  - type: input
+    id: nativegui
+    attributes:
+      label: NativeGUI version
+      placeholder: 1.0.0-rc.1
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Test result
+      options: ["Works completely in my tests", "Works partially", "Does not work", "Unclear"]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Screens and conditions tested
+      description: Named containers? Biomes? Villagers? Shulker colors? Resource pack order?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or reproduction details
+      description: In-game screenshots and sanitized log excerpts are helpful.
+    validations:
+      required: false

@@ -1,0 +1,7 @@
+{
+  "containers": "minecraft:chest",
+  "textures": {
+    "minecraft:textures/gui/container/generic_54.png": "minecraft:optigui/gui/desert_chest.png"
+  },
+  "match": {"@biome": {"=": "minecraft:desert"}}
+}

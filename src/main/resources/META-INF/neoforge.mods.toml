@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+modId="nativegui"
+version="${mod_version}"
+displayName="NativeGUI"
+authors="Isaac's projects"
+description='''Native NeoForge 1.21.1 support for OptiFine custom container GUI resource-pack rules.
+Independent code; no Fabric or Connector dependencies.'''
+displayTest="IGNORE_ALL_VERSION"
+
+[[mixins]]
+config="nativegui.mixins.json"
+
+[[dependencies.nativegui]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.nativegui]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="CLIENT"

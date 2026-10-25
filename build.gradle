@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = neo_version
+    runs {
+        client { client() }
+    }
+    mods {
+        nativegui { sourceSet sourceSets.main }
+    }
+}
+
+tasks.named('processResources', ProcessResources) {
+    inputs.property 'mod_version', mod_version
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand(mod_version: mod_version)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+// Uses no extra runtime libraries, Fabric API, Kotlin or Connector.
+
+// Standalone regression tests run in addition to the normal Gradle build.
+tasks.register('verifyLegacyRules', JavaExec) {
+    group = 'verification'
+    description = 'Verify published resource-pack format interoperability.'
+    dependsOn tasks.named('testClasses')
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.isaac.nativegui.core.LegacyRulesSmokeTest'
+    enableAssertions = true
+}
+tasks.named('check') {
+    dependsOn tasks.named('verifyLegacyRules')
+}
+
+tasks.register('verifyJsonRules', JavaExec) {
+    group = 'verification'
+    description = 'Verify supported OptiGUI 3 JSON rules and fail-closed matchers.'
+    dependsOn tasks.named('testClasses')
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.isaac.nativegui.core.JsonGuiSmokeTest'
+    enableAssertions = true
+}
+tasks.named('check') {
+    dependsOn tasks.named('verifyJsonRules')
+}

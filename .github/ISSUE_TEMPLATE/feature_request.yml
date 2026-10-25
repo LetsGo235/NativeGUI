@@ -1,0 +1,25 @@
+name: Feature request
+description: Suggest a feature or rule-format improvement.
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the resource pack or gameplay problem, not just the desired implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Existing pack examples or specification links
+      description: Include relevant public format documentation or reproducible pack rules.
+    validations:
+      required: false

@@ -1,0 +1,31 @@
+NativeGUI v1.0.0-rc.1 RELEASE-GATE PACK | Minecraft 1.21.1
+
+IMPORTANT: This is a *standalone diagnostic pack*.
+1. In Resource Packs, move THIS pack to the TOP of the enabled list.
+2. For the cleanest test, temporarily disable ALL other packs including
+   Colorful Containers - Glass Edition. Do not remove your mods.
+3. Place an actual PURPLE SHULKER BOX in the world (not undyed/normal).
+   Right-click it: you should see a large PURPLE BOX label on a purple GUI.
+4. Place an actual RED SHULKER BOX; open it: you should see RED BOX.
+5. Place an ordinary uncolored SHULKER BOX; open it: its GUI should be vanilla.
+6. Rename a CHEST ITEM in an anvil to EXACTLY: NativeGUI JSON Test
+   Place it and right-click it: should display JSON NAME MATCH teal GUI.
+7. Open a plain, unnamed chest: no teal JSON NAME MATCH GUI.
+8. Test F3+T while a container GUI is open, close/reopen it, and check
+   rule selection is unchanged.
+9. Re-enable Colorful Containers - Glass Edition BELOW this pack, and
+   repeat. You should still see this pack's purple/red/named-chest panels.
+10. Move Colorful Containers ABOVE this pack: higher-priority pack rules may
+    deliberately override these panels. This is expected if both target
+    the same GUI. Restore the intended order afterward.
+
+If shulker colors still fail, enable JVM option -Dnativegui.debug=true
+and inspect latest.log for `NativeGUI diagnostic: GUI=... context=...`.
+The context should include container=shulker_box, color=purple/red,
+sourceId=minecraft:purple_shulker_box / minecraft:red_shulker_box.
+If color=null or sourceId is wrong, the interaction snapshot is missing.
+If both are correct but texture unchanged, look for rule winner lines.
+
+NOTE: Villager, horse, mule and llama interfaces were visually tested with
+Glass Edition in beta. Specialized profession, mount-variant and donkey
+conditional matching is NOT confirmed.

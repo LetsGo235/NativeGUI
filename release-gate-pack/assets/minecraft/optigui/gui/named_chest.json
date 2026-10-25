@@ -1,0 +1,13 @@
+{
+  "containers": "minecraft:chest",
+  "textures": {
+    "minecraft:textures/gui/container/generic_54.png": "minecraft:optigui/gui/json_named.png"
+  },
+  "match": {
+    "@screen": {
+      "@title": {
+        "@text": "NativeGUI JSON Test"
+      }
+    }
+  }
+}

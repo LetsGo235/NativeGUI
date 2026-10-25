@@ -1,0 +1,5 @@
+Enable this pack ABOVE the main NativeGUI test pack.
+1. In an actual desert biome, open a single chest: gold texture.
+2. Open a single chest in the plains: teal texture from lower test pack.
+3. Move/teleport between biomes and reopen a chest to confirm context isolation.
+4. Disable pack and press F3+T to restore base pack.
