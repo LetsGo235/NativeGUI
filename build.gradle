@@ -34,6 +34,14 @@ tasks.withType(JavaCompile).configureEach {
     options.release = 21
 }
 
+// These smoke tests are ordinary Java main() programs with assertions rather than
+// JUnit/TestNG classes. Gradle 9's default Test task otherwise fails when it
+// detects test source files but discovers no framework-managed test methods.
+// The smoke tests still execute as JavaExec tasks below; check depends on both.
+tasks.named('test', Test) {
+    failOnNoDiscoveredTests = false
+}
+
 // Uses no extra runtime libraries, Fabric API, Kotlin or Connector.
 
 // Standalone regression tests run in addition to the normal Gradle build.
