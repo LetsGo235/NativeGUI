@@ -42,6 +42,18 @@ tasks.named('test', Test) {
     failOnNoDiscoveredTests = false
 }
 
+// The standalone Gson-backed JSON smoke tests run outside Minecraft.
+// Minecraft supplies Gson at game runtime, but JavaExec's test classpath
+// does not automatically inherit the Minecraft launcher libraries.
+// Keep this dependency strictly test-only: it does NOT ship in the mod JAR.
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testRuntimeOnly 'com.google.code.gson:gson:2.10.1'
+}
+
 // Uses no extra runtime libraries, Fabric API, Kotlin or Connector.
 
 // Standalone regression tests run in addition to the normal Gradle build.
